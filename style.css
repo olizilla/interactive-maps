@@ -1,0 +1,51 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+   font-weight: 300;
+   overflow-x:hidden; /* FF shows scroll horizontal scrollbars */
+
+   text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
+h1{
+	font-size: 1.8em;
+	text-shadow: 2px 2px 2px rgb(0,0,0);
+}
+
+li{
+	padding-bottom: 40px;
+}
+
+pre {
+	font-size: 40px;
+	color: white;
+	background-color: #333;
+	background-color: rgba(30,30,30,0.98);
+	border-radius: 10px;
+}
+
+.hi-viz {
+	height: 100%;
+	padding: 1px 40px 60px;
+	margin:  0px -40px;
+	background-color: #333;
+	background: rgba(0,0,0,0.5);
+	border-radius: 10px
+}
+.strike {
+	text-decoration: line-through;
+	color:#744;
+}
+.headshot{
+	width:160px; height:160px;
+	border:solid 6px #EFE;
+}
+.headshot:hover{
+	border-color: gold;
+}
+.js{
+	color:#f3df49;
+}
+.bin {
+	width:100%;
+	height:400px;
+}
