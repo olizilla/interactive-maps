@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Make a mark</title> 
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<style type="text/css">
+html, body, #leaflet{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+</style>
+</head>
+<body>
+  
+  <div id="leaflet"></div>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>  
+
+  <script>
+  var map = L.map('leaflet').setView([51.505, -0.09], 15);
+  
+  var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+  var toner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.jpg');
+  var watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg');
+
+  map.addLayer(osm);
+
+  // window.markers = L.layerGroup().addTo(map)
+
+  // map.on('click', function (evt) {
+  //   console.log('click', evt)
+  //   var marker = L.marker(evt.latlng)
+  //   window.markers.addLayer(marker)
+  // })
+  
+  </script>
+</body>
+</html>

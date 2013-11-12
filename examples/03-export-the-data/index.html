@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Export the data</title> 
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<style type="text/css">
+html, body, #leaflet{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+#export{
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  background: rgba(0,0,0,0.7)
+}
+</style>
+</head>
+<body>
+  
+  <div id="leaflet"></div>
+  <div id="export">
+    <button>Export data</button>
+  </div>
+  
+  <!-- JavaScript from here on -->
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>  
+
+  <script>
+  var map = L.map('leaflet').setView([51.505, -0.09], 15);
+  
+  var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+  map.addLayer(osm);
+
+  window.markers = L.layerGroup().addTo(map)
+
+  map.on('click', function (evt) {
+    console.log('click', evt)
+    var marker = L.marker(evt.latlng)
+    window.markers.addLayer(marker)
+  })
+
+  $('#export button').on('click', function(){
+    var geojson = window.markers.toGeoJSON()
+    console.log('GeoJSON for markers', JSON.stringify(geojson))
+  })
+
+  // var somePoints =  {"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-0.0931692123413086,51.50470902423732]}},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-0.0938558578491211,51.50871574849058]}},{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[-0.08763313293457031,51.50868903816216]}}]}
+
+  // map.addLayer(L.geoJson(somePoints))
+  </script>
+</body>
+</html>
